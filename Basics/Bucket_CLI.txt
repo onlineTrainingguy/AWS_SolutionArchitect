@@ -1,0 +1,23 @@
+--Create Bucket
+ aws s3 mb s3://tgsbucketraman --region us-east-1
+--remove bucket
+ aws s3 rb s3://tgsbucketraman 
+--cp command
+aws s3 cp getdata.php s3://tgsbucketraman
+aws s3 cp /local/dir/data s3://tgsbucket --recursive
+aws s3 cp s3://tgsbucket/getdata.php /local/dir/data
+aws s3 cp s3://tgsbucket/ /local/dir/data --recursive
+aws s3 cp s3://tgsbucket/init.xml s3://backup-bucket
+aws s3 cp s3://tgsbucket s3://backup-bucket --recursive
+--mv
+# s3 mv commands
+aws s3 mv source.json s3://tgsbucket
+aws s3 mv s3://tgsbucket/getdata.php /home/project
+aws s3 mv s3://tgsbucket/source.json s3://backup-bucket
+aws s3 mv /local/dir/data s3://tgsbucket/data --recursive
+aws s3 mv s3://tgsbucket s3://backup-bucket --recursive
+
+# s3 rm commands
+aws s3 rm s3://tgsbucket/queries.txt
+aws s3 rm s3://tgsbucket --recursive
+

@@ -1,0 +1,43 @@
+---AWS General Quiz--
+1.What is an Amazon VPC?
+   1. Virtual Public Compute
+   2. Virtual Private Cloud
+   3. Virtual Public Cloud
+   4. Virtual Private Compute
+Ans:-2
+2.An AWS VPC is a component of which group of AWS services?
+  1. Global Infrastructure
+  2. Database Services
+  3. Network Services
+  4. Compute Services
+Ans:-3
+3.What does an AWS Region consist of?
+ 1. A Console that gives you a quick global picture of your cloud computing environment
+ 2. A collection of databases that can only be accessed from a specific geographic region
+ 3. A collection of datacenters that spreads evenly around a specific contient
+ 4. A distinct location within geographic area designed to provide high availability of specific geography.
+Ans:4
+4.Which statement best describe Availability zone?
+  1. A Content distributed network used to distribute content to users.
+  2. Restricted area designed specifically for the creation of VPC
+  3. Two Zones containing compute resources that are designed to automatically maintain syncronized each other data.
+  4. Distinct locations from within an AWS region that are engineered to be isolated from failure.
+Ans:4
+5.What is AWS region?
+  1. A region is an independent data center, located in different countries around the globe.
+  2. A region is a geographical area divided into Availability Zones. Each region contains atleast 2 Availability Zones.
+  3. A region is collection of Edge locations available in specific countries.
+  4. A region is subset of AWS technologies For example compute region consist of EC2,ECS.
+Ans:2
+6.Which of following is correct?
+  1. #of Region># of AZ >#of Edge location
+  2. #of AZ>#of Edge Locations>#of Region
+  3. # of Edge Locations>#of AZ>#of Region
+  4. # of Edge locations># of Region > #of AZ
+Ans : 3
+7.In which of the following is CloudFront content cached?
+  1. Availability Zone
+  2. Region
+  3. Edge Location
+  4. Data Center
+Ans:-3
