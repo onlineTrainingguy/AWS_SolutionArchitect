@@ -1,0 +1,75 @@
+Step1-Create VPC
+    Name-SysDomain-VPC
+   CIDR - 10.10.0.0/16
+   IPV6 CIDR block -No IPV6
+   Teancy- Default
+Step2- Create subnets
+  
+ Public subnet
+   Name-SysDomain-Public-Subnet-1a
+   VPC-SysDomain-VPC
+   Availability Zone- US-east-1a
+   IPV4 CIDR block-10.10.1.0/24
+
+   Name-SysDomain-Public-Subnet-1b
+   VPC-SysDomain-VPC
+   Availability Zone- US-east-1b
+   IPV4 CIDR block-10.10.2.0/24
+Private Subnet
+  Name-SysDomain-Private-Subnet-1c
+   VPC-SysDomain-VPC
+   Availability Zone- US-east-1c
+   IPV4 CIDR block-10.10.3.0/24
+
+   Name-SysDomain-Private-Subnet-1d
+   VPC-SysDomain-VPC
+   Availability Zone- US-east-1d
+   IPV4 CIDR block-10.10.4.0/24
+
+Step3-Create Internet Gateway
+   Name-SysDomain-IGW
+   Attach it to VPC-SysDomain-VPC
+
+Step4-Create Route table
+   Private Route table
+   Name:SysDomain_PrivateRoute Table 	
+   
+   Public Route Table
+   Name: SysDomain_PublicRouteTable
+
+Step5-Create NAT Gateway
+  it is usually in public subnet lets select  SysDomain-Public-Subnet-1a 
+  Provide Elastic IP
+Step 6 attach NAT Gateway to Private Route table-Edit Route-->0.0.0.0/0  NateGateway
+       Also Associate the private subnet(1c and 1d)
+------------------
+Step7
+  Create EC2 instance -Amazon AMI 
+  Select VPC SysDomain
+  Select subnet SysDomain-Public-Subnet-1a
+  Auto-assign Public IP-Enabled
+  Write the user data (Advance Details)
+   Write as text
+	yum -y update
+	yum install httpd -y
+	service httpd start
+	chkconfig httpd on
+	yum install wget -y
+	yum install php php-mysql mysql -y
+  Create WebServerScurityGroup name:-WebServer-SG and open HTTP port 80
+Step 8:- Create an IAM role to EC2 instance and Permission S3FullAccess
+Step 9-  Create SNS Topic SysDomainTopic and Add subscription to email id
+Step10- Attach IAM role to EC2 instance
+Step 11- Create the Security Groups for RDS
+         Goto EC2 instance and Click on Security Group
+         Create Security group DatabaseSG and Add Rule for MySql and Custom IP is WebServerSG id
+         Create RDS with 
+Step 12- Create Loadbalancer ELB-SysDomain
+Step 13- Open EC2 instance and connect with mysql
+         mysql -h <<mysql dns>> -P 3306 -u mysqldb2018 -p
+         mysql -h sysdb.cbjlfsyoqu70.us-east-1.rds.amazonaws.com -P 3306 -u admin -p
+
+
+
+
+  
