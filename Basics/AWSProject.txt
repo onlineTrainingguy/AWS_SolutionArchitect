@@ -1,0 +1,21 @@
+VPC-Loadbalance-AutoScaling
+1. Create a VPC-IN-VPC
+2. CIDR(10.0.0.0/16)
+3. 2Private Subnets(10.0.1.0/24,10.0.2.0/24)
+4. 2Public Subnets(10.0.5.0/24,10.0.6.0/24)
+5. Create IG and NAT GW and Routing accordingly.
+6. RDS instance(VPC env,3306) for mysql and it is accessible to private and public Subnet
+7. Delete RDS instance
+8. Create 2 public Ec2 instances and 2 private Ec2 instances
+9. On public Ec2 instances insall apache2 and deploy index.html with differen data
+10.create a SSH connectivity b/w public Ec2 instances with private Ec2 instance and install my sql server on Private network
+12. Create a Loadbalancer for your website
+13. AutoScale your EC2 instances upto 3 instances if the number of request crosses CPU utiltization>60% and Autoscale down
+    to 1 instance if the number of request is less than 100 means CPU utilization <30%
+-------
+Developer is developing index.html file , implementer is hosting that file on S3 and Tester is testing that file
+1. Create groups called Developer  and Tester and implementer
+2. create some users in Developer and Tester groups
+3. Developers and Tester has readonly access to S3 buckets and Implementer has full access to S3 buckets
+4. Developers can access the S3 buckets using programs.
+5. Testers can not access the S3 buckets using progs but there are some dedicated machines allocated to tester for Testing purpose so that they can access S3 buckets.
