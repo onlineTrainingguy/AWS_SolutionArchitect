@@ -1,0 +1,2 @@
+  chmod 400 demo1.pem 
+  ssh -i demo1.pem ec2-user@10.200.1.6
