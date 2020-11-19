@@ -1,0 +1,28 @@
+Storage Classes
+
+1. S3 Standard:- 
+    Standard Storage class for s3
+    Eleven 9's durability and 99.99% availability
+2.  S3 Intelligent-Tiering
+    Designed to be a combination of S3 Standard and S3 Standard-Infrequent Access(IA). it has 2 tiers of storage
+    > Frequent Accessed
+    > Infrequently accessed
+    > Archive
+    > Deep archive
+3. S3 Standard-IA
+   > Designed for data that is accessed less frequently but requires rapid access when data is needed
+   > Eleven 9's durability and 99.99% availability
+4. S3 one Zone-IA
+   > Changes the replication and safety of our stored data. Designed for data that's less frequntly accessed but      requires rapid access when that data is needed
+   > Eleven 9s durability but 99.5% availability
+5. S3 Glacier
+   > Low Cost storage data archive
+   > Eleven 9s durability and 99.99% availability
+   > Standard retrieval
+   > Expedited retrieval
+6. S3 Glacier Deep Archive
+   > Cheap Storage for data archive and long term backups
+   > Eleven 9s durability and 99,99% availbility
+   > Standard reterival
+   > Bulk reterival
+
